@@ -68,10 +68,17 @@ Video Progress:
 - [ ] 1. Gather the problem and solution     → gate: problem + solution in hand
 - [ ] 2. Draft Scripts.md                     → gate: validate_script.py OK
 - [ ] 3. Iterate on the script with the user  → gate: user approves the script
-- [ ] 4. Generate the narration               → gate: key set + total ≤ 90 s + user approves the voice
+- [ ] 4. Generate the narration               → gate: key set + total ≤ 90 s
 - [ ] 5. Build the animation                  → gate: validate --project OK + check_layout OK + stills look right
-- [ ] 6. Render, verify, deliver              → gate: check_video.py OK + loudness OK + user confirms
+- [ ] 6. Render, verify, deliver              → gate: check_video.py OK + loudness OK
 ```
+
+The script approval in step 3 is the last stop. After it, run steps 4–6 to the end without asking. Stop only on an exception:
+
+- The MiniMax key is missing or rejected.
+- The narration total is over 90 s.
+- The same defect survives 3 fix rounds.
+- A video with the output name exists that this session did not render.
 
 ### 1. Gather the problem and solution
 
@@ -114,7 +121,7 @@ Fix every ERROR before showing the script. Treat WARN lines as questions for the
 
 ### 3. Iterate on the script
 
-Show the scene list, the estimated total seconds, the narration, the step table and any 待確認 items, and give the script's path. The user edits the file directly or asks for changes. After each round, re-run the validator. Do not build anything until the user approves the script. Never overwrite the user's edits; edit in place.
+Show the scene list, the estimated total seconds, the narration, the step table and any 待確認 items, and give the script's path. The user edits the file directly or asks for changes. After each round, re-run the validator. Do not build anything until the user approves the script. The approval also starts steps 4–6. Never overwrite the user's edits; edit in place.
 
 ### 4. Generate the narration
 
@@ -130,7 +137,7 @@ uv run SKILL_DIR/scripts/make_voice.py "<output folder>/Scripts.md" "$BUILD"
 
 `make_voice.py` calls MiniMax once per line, normalizes each file to −16 LUFS, and writes `src/voice.json` (file, length and subtitle per line). Lines whose text and voice settings did not change are reused, so re-running after an edit only pays for the edited lines.
 
-It prints every line's length and the narration total. If the total is over 90 s, or over 75 s and the user wants it shorter, show the longest lines and ask the user what to cut. Never raise `語速` to fit. Then let the user listen to a few files in `$BUILD/public/vo/` and approve the voice.
+It prints every line's length and the narration total. If the total is over 90 s, show the longest lines and ask the user what to cut. Never raise `語速` to fit. Otherwise go straight to step 5.
 
 After any 旁白 edit, re-run `make_voice.py` before rendering.
 
@@ -160,7 +167,7 @@ If the user wants a change while you build, change the script first, re-validate
 
 ### 6. Render, verify, deliver
 
-If a video with the same name exists in the output folder, ask before overwriting it.
+If a video with the same name exists in the output folder and this session did not render it, ask before overwriting it.
 
 ```bash
 cd "$BUILD"

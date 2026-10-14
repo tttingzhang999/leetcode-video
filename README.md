@@ -51,7 +51,7 @@ In Claude Code, say "make a solution video for LeetCode 739", or run `/leetcode-
 1. **Give the problem and solution.** Paste the problem and your code. If you already have a `Scripts.md`, give that instead.
 2. **Draft the script.** The skill writes `Scripts.md`. It holds the problem, the solution, every scene, the narration and the dry-run step table.
 3. **Edit the script.** Edit `Scripts.md` yourself or ask Claude. `scripts/validate_script.py` checks the format and the length.
-4. **Generate the narration.** `scripts/make_voice.py` calls MiniMax and makes one audio file per narration line. Listen and approve the voice.
+4. **Generate the narration.** `scripts/make_voice.py` calls MiniMax and makes one audio file per narration line. From here on the skill runs to the end without stopping.
 5. **Build the video.** The skill creates a Remotion project in a temp folder and animates the script.
 6. **Render and check.** The skill renders both MP4s. `check_video.py` and `check_layout.py` check the length, the loudness and the centering.
 
