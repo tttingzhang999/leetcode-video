@@ -8,6 +8,14 @@ A Claude Code skill. Give it a LeetCode problem and its solution, and it makes a
 - Lofi background music and sound effects synthesized by the skill itself; no third-party assets
 - Built with [Remotion](https://www.remotion.dev/)
 
+## Demo
+
+<!-- Drag the MP4s into this section in the GitHub web editor; GitHub turns each into an embedded player. -->
+
+Landscape:
+
+Portrait:
+
 ## Example
 
 LeetCode 739 Daily Temperatures:
