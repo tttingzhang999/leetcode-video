@@ -10,6 +10,8 @@ A Claude Code skill. Give it a LeetCode problem and its solution, and it makes a
 
 ## Demo
 
+LeetCode 739 Daily Temperatures. The script behind it: [examples/lc739/Scripts.md](examples/lc739/Scripts.md).
+
 Landscape:
 
 https://github.com/user-attachments/assets/2173f9d3-eaea-4c1d-916c-71ff4e7c7c43
@@ -17,14 +19,6 @@ https://github.com/user-attachments/assets/2173f9d3-eaea-4c1d-916c-71ff4e7c7c43
 Portrait:
 
 https://github.com/user-attachments/assets/eaac00d4-cf7b-4247-a1d8-7940e6c025da
-
-## Example
-
-LeetCode 739 Daily Temperatures:
-
-- Landscape: [examples/lc739/lc739.mp4](examples/lc739/lc739.mp4)
-- Portrait: [examples/lc739/lc739-vertical.mp4](examples/lc739/lc739-vertical.mp4)
-- Script: [examples/lc739/Scripts.md](examples/lc739/Scripts.md)
 
 ## Requirements
 
