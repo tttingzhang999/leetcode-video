@@ -65,7 +65,7 @@ At the end, your folder holds three files: `Scripts.md` and the two MP4s.
 | `reference/`      | Script format, color palette, Remotion project rules         |
 | `scripts/`        | Validate the script, make narration and music, check videos  |
 | `assets/project/` | Remotion project template, background music, sound effects   |
-| `examples/lc739/` | Full example: script, source code and the rendered videos    |
+| `examples/lc739/` | Full example: script and source code                          |
 
 ## License
 
